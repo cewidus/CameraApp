@@ -1,0 +1,8 @@
+/*appKey=アプリケーション識別ID
+debug=true
+conversion=YES
+*/
+
+appKey=YJSUK04G6D9KQSW4
+debug=false
+conversion=YES

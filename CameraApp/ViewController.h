@@ -7,9 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <AVFoundation/AVFoundation.h>
+#import "CheckPassword.h"
+#import "GAITrackedViewController.h"
+#import "NADView.h"
+#import "ImobileSdkAds/ImobileSdkAds.h"
+#import "AMoAdSDK.h"
+#import "PasscodeLockScreen.h"
 
-@interface ViewController : UIViewController
+@class GADBannerView;
+@interface ViewController : GAITrackedViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate,PasswordDelegate,GADInterstitialDelegate,NADViewDelegate,IMobileSdkAdsDelegate,PassCodeDelegate,GADBannerViewDelegate>
+{
+    BOOL FrontCamera;
+    BOOL haveImage;
+    NSString *passwordCheckSegue;
+    GADBannerView *bannerView;
+    
+}
 
+@property(nonatomic, retain) AVCaptureStillImageOutput *stillImageOutput;
+@property(nonatomic, strong) GADInterstitial *interstitial;
+@property (nonatomic, retain) NADView *nadView;
+@property (weak, nonatomic) IBOutlet UIView *globalAdview;
+@property (nonatomic, retain) GADBannerView *bannerView;
 
 @end
 
